@@ -28,7 +28,7 @@ class App extends Component {
         <h1>Select 组件示例</h1>
         <div className="demos">
           <div className="demo demo-1">
-            <h4 className="demo-title">父级oveflow auto</h4>
+            <h4 className="demo-title">父节点oveflow auto</h4>
             <Select>
               {datas.map(({value, label}) => (
                 <Option key={label} value={value} >{label}</Option>
@@ -36,7 +36,7 @@ class App extends Component {
             </Select>
           </div>
           <div className="demo demo-2">
-            <h4 className="demo-title">父级oveflow hidden</h4>
+            <h4 className="demo-title">父节点oveflow hidden</h4>
             <Select>
               {datas.map(({value, label}) => (
                 <Option key={label} value={value} >{label}</Option>
