@@ -1,0 +1,15 @@
+{
+  "presets": ["env", "react"],
+  "plugins": [
+    "transform-class-properties",
+    [ "module-resolver", {
+      "root": ["."],
+      "alias": {
+        "utils": "./src/utils",
+        "styles": "./src/style",
+        "images": "./src/images",
+        "components": "./src/components"
+      }
+    }]
+  ]
+}

@@ -19,7 +19,7 @@ export default class Select extends React.Component {
     const mode = 'value' in props ? 'Controlled' : 'Uncontrolled'
     const state = {
       mode,
-      showDropdown: false,
+      showDropMenu: false,
     }
 
     if (mode === 'Uncontrolled') {
@@ -34,9 +34,9 @@ export default class Select extends React.Component {
       return
     }
 
-    if (this.state.showDropdown) {
-      if (this.refs.dropdown.contains(ev.target) === false) {
-        this.setState({showDropdown: false})
+    if (this.state.showDropMenu) {
+      if (this.refs.dropMenu.contains(ev.target) === false) {
+        this.setState({showDropMenu: false})
       }
     }
   }
@@ -46,8 +46,8 @@ export default class Select extends React.Component {
       return
     }
 
-    if (!this.state.showDropdown) {
-      this.setState({showDropdown: true})
+    if (!this.state.showDropMenu) {
+      this.setState({showDropMenu: true})
     }
   }
 
@@ -72,7 +72,7 @@ export default class Select extends React.Component {
   onChangeHandle = value => {
     const currentValue = this.state.mode === 'Controlled' ? this.props.value : this.state.activeValue
     if (value === currentValue) {
-      this.setState({showDropdown: false})
+      this.setState({showDropMenu: false})
       return
     }
 
@@ -84,7 +84,7 @@ export default class Select extends React.Component {
       this.setState({activeValue: value})
     }
 
-    this.setState({showDropdown: false})
+    this.setState({showDropMenu: false})
   }
 
   render() {
@@ -102,9 +102,9 @@ export default class Select extends React.Component {
         {
           !this.props.disabled &&
           <ul
-            ref="dropdown"
-            className="select-dropdown"
-            style={{display: this.state.showDropdown ? '' : 'none'}}
+            ref="dropMenu"
+            className="select-dropMenu"
+            style={{display: this.state.showDropMenu ? '' : 'none'}}
           >
             {
               React.Children.map(this.props.children, (child) => {
@@ -119,7 +119,7 @@ export default class Select extends React.Component {
             }
             {
               (!this.props.children || this.props.children.length === 0) &&
-              <li onClick={() => { this.setState({showDropdown: false}) }}>无匹配结果</li>
+              <li onClick={() => { this.setState({showDropMenu: false}) }}>无匹配结果</li>
             }
           </ul>
         }

@@ -1,63 +1,35 @@
-import React, { Component } from 'react';
-import Select from '../components/Select'
-const Option = Select.Option
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 
-const datas = [
-  {value: 1, label: '北京'},
-  {value: 2, label: '上海'},
-  {value: 3, label: '广州'},
-  {value: 4, label: '深圳'},
-  {value: 5, label: '草场地'},
+const DOMAIN = '//www.vq0599.com'
+const data = [
+  {title: '论如何实现一个完成的组件', address: '/article/2018/0513.html', router: '/select_180513'},
+  {title: 'React项目中Modal组件设计思想', address: '/article/2018/0805.html', router: '/modal_180805'},
 ]
 
-/**
- * 1. 父级overflow auto
- * 2. 父级overflow hidden
- * 3. 兄弟节点层级高
- */
-
-class App extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      <div className="app">
-        <h1>Select 组件示例</h1>
-        <div className="demos">
-          <div className="demo demo-1">
-            <h4 className="demo-title">父节点oveflow auto</h4>
-            <Select>
-              {datas.map(({value, label}) => (
-                <Option key={label} value={value} >{label}</Option>
-              ))}
-            </Select>
-          </div>
-          <div className="demo demo-2">
-            <h4 className="demo-title">父节点oveflow hidden</h4>
-            <Select>
-              {datas.map(({value, label}) => (
-                <Option key={label} value={value} >{label}</Option>
-              ))}
-            </Select>
-          </div>
-          <div className="demo demo-3">
-            <h4 className="demo-title">父节点的层级较低</h4>
-            <div className="demo-3-selectwrapper">
-              <Select>
-                {datas.map(({value, label}) => (
-                  <Option key={label} value={value} >{label}</Option>
-                ))}
-              </Select>
-            </div>
-            <span className="demo-3-position">遮不住我</span>
-          </div>
-        </div>
-      </div>
-    )
-  }
-}
-
-export default App;
+export default () => (
+  <div>
+    <h1>一些用于博客中的示例代码~~</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>标题</th>
+          <th>博客地址</th>
+          <th>代码地址</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          data.map(({title, address, router}, i) => (
+            <tr key={i}>
+              <td>{title}</td>
+              <td><a href={`${DOMAIN}${address}`} target="_blank">戳我</a></td>
+              <td><Link to={router}>戳我</Link></td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+)
