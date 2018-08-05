@@ -1,7 +1,7 @@
 {
   "name": "blog-demo",
   "version": "1.0.0",
-  "description": "demos of my blog",
+  "description": "The code demos in my blog",
   "main": "index.js",
   "dependencies": {
     "react": "^16.4.2",
@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --hot",
-    "build": "rimraf dist && webpack --config webpack.prod.js",
+    "build": "rimraf docs && webpack --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
