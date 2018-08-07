@@ -1,0 +1,20 @@
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  background: rgba(0, 0, 0, .56);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal-alert {
+    width: 360px;
+    min-height: 100px;
+    background: #FFF;
+    border-radius: 6px;
+    padding: 15px;
+  }
+}

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const DOMAIN = '//www.vq0599.com'
 const data = [
-  {title: '论如何实现一个完成的组件', address: '/article/2018/0513.html', router: '/select_180513'},
+  {title: '论如何实现一个完美的组件', address: '/article/2018/0513.html', router: '/select_180513'},
   {title: 'React项目中Modal组件设计思想', address: '/article/2018/0805.html', router: '/modal_180805'},
 ]
 
