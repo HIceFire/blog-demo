@@ -17,7 +17,7 @@ const datas = [
  * 3. 兄弟节点层级高
  */
 
-export default class Select_180513 extends Component {
+export default class SelectView extends Component {
   constructor(props) {
     super(props)
   }

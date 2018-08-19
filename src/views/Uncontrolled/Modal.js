@@ -2,7 +2,7 @@ import React from 'react'
 import Modal from 'components/Modal'
 
 
-export default class Modal_180805 extends React.Component {
+export default class ModalView extends React.Component {
   handleShowModal = () => {
     Modal.alert({
       content: <p>Some contents...</p>
